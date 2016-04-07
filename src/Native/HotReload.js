@@ -10,7 +10,13 @@ Elm.Native.HotReload.make = function(localRuntime) {
 
   var init = function init(cb) {
     var state = localStorage.getItem("state");
-    return state ? Maybe.Just(JSON.parse(state)) : Maybe.Nothing;
+
+    if (state) {
+      console.info("The model was restored from localStorage! If you find yourself getting strange errors try clearing the state using localStorage.removeItem('state') and reloading the page.");
+      return Maybe.Just(JSON.parse(state));
+    } else {
+      return Maybe.Nothing;
+    }
   };
 
   var saveModel = function saveModel(model) {
