@@ -1,7 +1,7 @@
 //import Maybe //
 
 //var _ccapndave$elm_hot_reload$Native_HotReload = function() {
-var _user$project$Native_HotReload = function() {
+var _claritydev$ctp$Native_HotReload = function() {
 
   function init() {
     var state = localStorage.getItem("state");
